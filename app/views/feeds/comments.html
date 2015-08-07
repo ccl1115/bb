@@ -5,28 +5,26 @@
 
     <ul>
         <li ng-repeat="comment in comments">
-          <div class="row">
-            <button class="portrait btn btn-fab btn-default col-md-3">
-              <span class="portrait" style="color: #{{ comment.avatarColor | color }}">{{ comment.userAvatar }}</span>
-            </button>
-            <div class="col-md-10">
-              <p class="content">{{ comment.content }}</p>
-              <p class="info">{{ comment.commentViewTime }} <span class="pull-right">{{ comment.userName }}</span></p>
-            </div>
-          </div>
+              <button class="portrait btn btn-fab btn-default">
+                <span class="portrait" style="color: #{{ comment.avatarColor | color }}">{{ comment.userAvatar }}</span>
+              </button>
+              <div>
+                <p class="content">{{ comment.content }}</p>
+                <p class="info">{{ comment.commentViewTime }} <span class="pull-right">{{ comment.userName }}</span></p>
+              </div>
         </li>
     </ul>
 
     <form class="form">
         <div class="form-control-wrapper">
-            <textarea ng-model="text" rows="7" class="form-control empty" type="text"></textarea>
+            <textarea ng-model="$parent.postContent" rows="7" class="form-control" type="text"></textarea>
             <div class="floating-label">回复内容</div>
             <span class="material-input"></span>
         </div>
         <div class="form-control-wrapper">
           <div class="togglebutton">
               <label>实名
-                <input type="checkbox"/>
+                <input type="checkbox" ng-checked="realname" ng-model="$parent.realname"/>
                 <span class="toggle"></span>
               </label>
           </div>

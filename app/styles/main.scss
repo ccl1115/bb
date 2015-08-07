@@ -21,7 +21,7 @@ body {
 }
 
 #container {
-  margin: 80px 100px auto 100px;
+  margin: 80px 10% auto 10%;
 
 
   a {
@@ -46,14 +46,21 @@ div.modal-content {
 
 ul.feeds {
   margin: 0;
+	padding: 0;
   list-style-type: none;
 
   li {
     float: left;
-    width: 90%;
+    width: 95%;
     min-width: 200px;
     margin-left: 8px;
     margin-right: 8px;
+
+
+		button.loadmore {
+			width: 90%;
+			margin-bottom: 16px;
+		}
 
     div.panel-body {
       img {
@@ -81,12 +88,16 @@ ul.feeds {
     }
   }
 
+	li:last-child {
+		width: 100%;
+	}
+
 }
 
 div.publish {
   position: fixed;
-  bottom: 80px;
-  right: 100px;
+  bottom: 5%;
+  right: 10%;
 }
 
 div.comments {
@@ -104,18 +115,23 @@ div.comments {
   }
 
   ul {
+		margin: 0;
+		padding: 0;
     list-style-type: none;
-    max-height: 550px;
+    max-height: 450px;
     overflow-y: auto;
 
     li {
-      margin-bottom: 8px;
+      min-height: 100px;
+			margin: 8px;
 
-      div.row {
-        padding-top: 8px;
-        border-bottom: solid 1px #ccc;
+      padding-top: 8px;
+      border-bottom: solid 1px #ccc;
 
-        button.portrait span.portrait {
+      button.portrait {
+				float:left;
+
+			  span.portrait {
           font-family: 'PortraitFont';
           font-size: 26px;
           line-height: 26px;
@@ -123,19 +139,26 @@ div.comments {
           padding: 0;
           margin: 0;
         }
+			}
 
-        div {
-          min-height: 100px;
+      div {
+				float:left;
+				padding: 8px;
 
-          p.content {
-            font-size: 16px;
-          }
-          p.info {
-            font-size: 12px;
-          }
+        p.content {
+          font-size: 16px;
+        }
+        p.info {
+          font-size: 12px;
+					color: #999;
         }
       }
     }
+		 li:last-child {
+			 div.row {
+				 border-bottom: 0px;
+			 }
+		 }
   }
 }
 

@@ -21,14 +21,22 @@
     <nav class="navbar navbar-material-purple-500 navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand">蓝莓</a>
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand">蓝莓</a>
             </div>
-            <ul class="nav navbar-nav">
-                <li><a href="#/account">账号</a></li>
-                <li><a href="#/feeds">Feeds</a></li>
-            </ul>
-            <account-select ></account-select>
-            </ul>
+
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <ul class="nav navbar-nav">
+                  <li><a href="#/account" data-toggle="collapse" data-target="#navbar-collapse">账号</a></li>
+                  <li><a href="#/feeds" data-toggle="collapse" data-target="#navbar-collapse">Feeds</a></li>
+              </ul>
+              <account-select ></account-select>
+            </div>
         </div>
     </nav>
 
@@ -47,10 +55,6 @@
 
     <script type="text/ng-template" id="commentsModal.html">
         <ng-include src="'views/feeds/comments.html'"></ng-include>
-    </script>
-
-    <script type="text/ng-template" id="publishModal.html">
-      <ng-include src="'views/feeds/publish.html'"></ng-include>
     </script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

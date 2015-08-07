@@ -11,13 +11,14 @@ angular.module('bbApp')
   .filter('color', function() {
     return function(input) {
       return input.slice(2);
-    }
+    };
   })
-  .controller('CommentsCtrl', ['$scope', '$modal', 'requester', 'params',
-    function($scope, $modal, requester, params) {
+  .controller('CommentsCtrl', ['$scope', 'requester', 'params',
+    function($scope, requester, params) {
       $scope.comments = [];
-
-      console.log(params);
+      $scope.loading = false;
+      $scope.postContent = "";
+      $scope.realname = true;
 
       $scope.fetch = function() {
         $scope.loading = true;
@@ -37,18 +38,22 @@ angular.module('bbApp')
 
       $scope.postComment = function() {
         $scope.loading = true;
-        requester.request('post_comment', [$scope.text, params[0], 0],
+        requester.request('post_comment', [$scope.postContent, params[0], $scope.realname ? 1 : 0],
           function(data) {
             console.log(data);
-            if (data.code == 0) {
-              $scope.text = '';
+            if (data.code === 0) {
               $scope.fetch();
             }
+            $scope.postContent = '';
+            $scope.loading = false;
+            $scope.$apply();
           },
           function(data) {
             console.log(data);
+            $scope.loading = false;
+            $scope.$apply();
           });
-      }
+      };
 
       $scope.fetch();
     }

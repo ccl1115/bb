@@ -1,7 +1,15 @@
-<div ng-controller="AccountCtrl">
-    <div class="row sub-header center-block">
-        <h2>账号列表</h2>
-        <button class="btn btn-material-purple-100 pull-right" ng-click="add()">添加新账号</button>
+<div>
+    <div class="navbar navbar-material-amber-300">
+      <div class="container-fluid">
+        <ul class="nav nav-navbar">
+          <li>
+            <h4>账号列表</h4>
+          </li>
+          <li>
+            <button class="btn btn-material-amber-800 pull-right" ng-click="add()">添加新账号</button>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <p class="col-md-4 col-md-offset-4 alert alert-warning" ng-show="accounts.length == 0">没有账号，请添加一个。</p>
