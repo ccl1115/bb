@@ -37,7 +37,7 @@ angular.module('bbApp')
 
       $scope.postComment = function() {
         $scope.loading = true;
-        requester.request('post_comment', [$scope.text, $scope.params[0], 0],
+        requester.request('post_comment', [$scope.text, params[0], 0],
           function(data) {
             console.log(data);
             if (data.code == 0) {

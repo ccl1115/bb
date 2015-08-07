@@ -12,6 +12,7 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/material.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/material-fullpalette.css" />
     <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/ripples.css" />
     <!-- endbower -->
     <!-- endbuild -->
@@ -42,6 +43,14 @@
 
     <script type="text/ng-template" id="loading.html">
       <p class="text-center loading">加载中...</p>
+    </script>
+
+    <script type="text/ng-template" id="commentsModal.html">
+        <ng-include src="'./views/feeds/comments.html'"></ng-include>
+    </script>
+
+    <script type="text/ng-template" id="publishModal.html">
+      <ng-include src="'./views/feeds/publish.html'"></ng-include>
     </script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

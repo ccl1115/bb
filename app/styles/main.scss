@@ -34,12 +34,6 @@ body {
 
 }
 
-@media (max-width: 768px) {
-  #container {
-    margin: 200px auto;
-  }
-}
-
 div.modal-content {
   padding: 16px;
 }
@@ -96,7 +90,7 @@ div.publish {
 }
 
 div.comments {
-  overflow-y: scroll;
+  overflow-y: hidden;
 
   form.form {
     background-color: #fff;
