@@ -13,7 +13,7 @@ angular.module('bbApp.requester', ['bbApp.account', 'bbApp.version', 'bbApp.sche
 
     };
 
-    var proxy = "http://dustr.info:10000";
+    var proxy = "http://182.254.185.162:10000";
 
     Requester.prototype.sign = function(data) {
       if (_.isObject(data)) {

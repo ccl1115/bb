@@ -40,5 +40,10 @@ angular.module('bbApp')
             console.log(data);
           });
       }
+
+      $scope.delete = function(a) {
+        account.del(a);
+        $scope.accounts = account.accounts;
+      }
     }
   ]);

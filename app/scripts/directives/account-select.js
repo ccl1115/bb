@@ -9,7 +9,7 @@
 angular.module('bbApp.account.select', [])
   .controller('accountSelectCtrl', ['$scope', '$cookies', 'account', function($scope, $cookies, account) {
     $scope.accounts = account.accounts;
-    $scope.userid = account.activated == undefined ? "无" : account.activated.userid;
+    $scope.userid = account.activated === undefined ? "" : account.activated.userid;
     $scope.select = function(a) {
       console.log(a);
       account.activate(a);
@@ -18,7 +18,7 @@ angular.module('bbApp.account.select', [])
   }])
   .directive('accountSelect', function() {
     return {
-      restrict: 'A',
+      restrict: 'E',
       templateUrl: 'views/tpls/account-select.html'
     };
   });

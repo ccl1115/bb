@@ -16,8 +16,4 @@ describe('Controller: FeedsCtrl', function () {
       // place here mocked dependencies
     });
   }));
-
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(FeedsCtrl.awesomeThings.length).toBe(3);
-  });
 });

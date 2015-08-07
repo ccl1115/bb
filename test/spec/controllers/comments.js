@@ -16,8 +16,4 @@ describe('Controller: CommentsCtrl', function () {
       // place here mocked dependencies
     });
   }));
-
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(CommentsCtrl.awesomeThings.length).toBe(3);
-  });
 });

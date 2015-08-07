@@ -9,7 +9,7 @@
             <button class="portrait btn btn-fab btn-default col-md-3">
               <span class="portrait" style="color: #{{ comment.avatarColor | color }}">{{ comment.userAvatar }}</span>
             </button>
-            <div class="col-md-9">
+            <div class="col-md-10">
               <p class="content">{{ comment.content }}</p>
               <p class="info">{{ comment.commentViewTime }} <span class="pull-right">{{ comment.userName }}</span></p>
             </div>
@@ -18,13 +18,19 @@
     </ul>
 
     <form class="form">
-        <div class="form-group">
-            <textarea ng-model="text" class="form-control" type="text"></textarea>
+        <div class="form-control-wrapper">
+            <textarea ng-model="text" rows="7" class="form-control empty" type="text"></textarea>
+            <div class="floating-label">回复内容</div>
+            <span class="material-input"></span>
         </div>
-        <div class="form-group">
-            <label>实名</label>
-            <input type="checkbox"/>
+        <div class="form-control-wrapper">
+          <div class="togglebutton">
+              <label>实名
+                <input type="checkbox"/>
+                <span class="toggle"></span>
+              </label>
+          </div>
         </div>
-        <button ng-click="postComment()" class="btn btn-primary" ng-hide="loading">评论</button>
+        <button ng-click="postComment()" class="btn btn-material-purple-600" ng-hide="loading">评论</button>
     </form>
 </div>

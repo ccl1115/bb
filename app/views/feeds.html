@@ -1,3 +1,4 @@
+<div ng-show="account.activated">
 <div class="row sub-header center-block">
     <h2>Feeds</h2>
 
@@ -73,6 +74,13 @@
     <i class="mdi-image-edit">
     </i>
   </button>
+</div>
+</div>
+<div ng-hide="account.activated">
+<p ng-hide="account.activated" class="alert alert-warning text-center">
+  请先添加帐号!
+</p>
+<a class="pull-right" href="#/account">帐号管理</a>
 </div>
 
 <script type="text/ng-template" id="commentsModal.html">

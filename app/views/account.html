@@ -1,14 +1,24 @@
 <div ng-controller="AccountCtrl">
     <div class="row sub-header center-block">
         <h2>账号列表</h2>
-        <button class="btn btn-material-purple-600 pull-right" ng-click="add()">添加新账号</button>
+        <button class="btn btn-material-purple-100 pull-right" ng-click="add()">添加新账号</button>
     </div>
 
     <p class="col-md-4 col-md-offset-4 alert alert-warning" ng-show="accounts.length == 0">没有账号，请添加一个。</p>
 
   <div class="col-md-4 col-md-offset-4">
     <ul class="list-group" ng-if="accounts">
-        <li class="alert alert-material-purple-600" ng-repeat="account in accounts">{{ account.userid }}</li>
+        <li class="list-group-item" ng-repeat="account in accounts">
+          <div class="alert alert-primary">
+            <p>{{ account.userid }}
+              <span>
+                <button type="button" class="close" aria-label="Close" ng-click="delete(account)">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </span>
+            </p>
+          </div>
+        </li>
     </ul>
   </div>
 

@@ -3,6 +3,12 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+@font-face{
+	font-family: 'PortraitFont';
+	src: url('fonts/fontello.ttf') format('truetype'),
+	     url('fonts/fontello.svg#webfont') format('svg');
+}
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -15,8 +21,23 @@ body {
 }
 
 #container {
-  max-width: 800px;
-  margin: 80px auto;
+  margin: 80px 100px auto 100px;
+
+
+  a {
+    color: #8e24aa;
+
+    :hover {
+      color: #8e24aa;
+    }
+  }
+
+}
+
+@media (max-width: 768px) {
+  #container {
+    margin: 200px auto;
+  }
 }
 
 div.modal-content {
@@ -33,21 +54,10 @@ ul.feeds {
   margin: 0;
   list-style-type: none;
 
-  @media (max-width: 1199px) {
-    li {
-      width: 30%;
-    }
-  }
-
-  @media (max-width: 768px) {
-    li {
-      width: 48%;
-    }
-  }
-
   li {
     float: left;
-    min-width: 300px;
+    width: 90%;
+    min-width: 200px;
     margin-left: 8px;
     margin-right: 8px;
 
@@ -64,6 +74,19 @@ ul.feeds {
       }
     }
   }
+
+  @media (min-width: 768px) {
+    li {
+      width: 45%;
+    }
+  }
+
+  @media (min-width: 1199px) {
+    li {
+      width: 30%;
+    }
+  }
+
 }
 
 div.publish {
@@ -79,12 +102,17 @@ div.comments {
     background-color: #fff;
     padding: 16px;
     position: static;
+    border-top: solid 1px #ccc;
+
+    textarea {
+      resize: none;
+    }
   }
 
   ul {
     list-style-type: none;
-    max-height: 600px;
-    overflow-y: scroll;
+    max-height: 550px;
+    overflow-y: auto;
 
     li {
       margin-bottom: 8px;
@@ -92,6 +120,15 @@ div.comments {
       div.row {
         padding-top: 8px;
         border-bottom: solid 1px #ccc;
+
+        button.portrait span.portrait {
+          font-family: 'PortraitFont';
+          font-size: 26px;
+          line-height: 26px;
+          height: 100%;
+          padding: 0;
+          margin: 0;
+        }
 
         div {
           min-height: 100px;
@@ -105,6 +142,16 @@ div.comments {
         }
       }
     }
+  }
+}
+
+div.publish {
+  textarea {
+    resize: none;
+  }
+
+  div.togglebutton {
+    margin: 16px;
   }
 }
 

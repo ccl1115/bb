@@ -18,6 +18,7 @@ angular.module('bbApp')
     function($scope, $modal, $cookies, account, requester) {
       $scope.feeds = [];
       $scope.factoryId = 0;
+      $scope.account = account;
 
       var obj = $cookies.getObject('feeds.recents');
       if (obj == undefined) {
